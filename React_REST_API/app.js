@@ -1,2 +1,12 @@
-const fs = require('fs');
-fs.writeFileSync('hello.txt', 'Hello from koko');
+import express from 'express';
+import bodyParser from 'body-parser';
+
+const app = express()
+
+app.get("/", (req, res, next)=>{
+    res.send("Hello World");
+});
+
+app.listen(3000, () => {
+    console.log("Server is running on port 3000");
+});
