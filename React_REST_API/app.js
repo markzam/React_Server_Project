@@ -44,19 +44,19 @@ app.put("/sifts/:siftId", (req, res) => {
     res.send(siftToUpdate);
 });
 
-app.delete("/:siftId", (req, res) => {
-    const siftId = req.params.siftId;
-    const siftToDeleteIndex = dummySifts.findIndex(
-      (sift) => req.body.id == siftId
-    );
+// app.delete("/:siftId", (req, res) => {
+//     const siftId = req.params.siftId;
+//     const siftToDeleteIndex = dummySifts.findIndex(
+//       (sift) => req.body.id == siftId
+//     );
   
-    if (siftToDeleteIndex === -1)
-      return res.status(404).send("Product not found.");
+//     if (siftToDeleteIndex === -1)
+//       return res.status(404).send("Product not found.");
   
-    const deletedSift = dummySifts.splice(siftToDeleteIndex, 1);
+//     const deletedSift = dummySifts.splice(siftToDeleteIndex, 1);
   
-    res.send(deletedSift[0]);
-  });
+//     res.send(deletedSift[0]);
+//   });
 
 app.listen(3000, () => {
     console.log("Server is running on port 3000");
