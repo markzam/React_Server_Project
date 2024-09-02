@@ -23,7 +23,7 @@ siftsRouter.post("/", (req, res) => {
 });
 
 siftsRouter.put("/:siftId", (req, res) => {
-    console.log("Updating a sift");
+    console.log("-->Updating a sift");
     const revDate = new Date
     const siftId = req.params.siftId;
     const siftToUpdate = dummySifts.find((p) => p.id === +siftId);
@@ -42,7 +42,7 @@ siftsRouter.put("/:siftId", (req, res) => {
 });
 
 siftsRouter.delete("/:siftId", (req, res) => {
-    console.log("Deleting a sift");
+    console.log("-->Deleting a sift");
     const siftId = req.params.siftId;
     const siftToDeleteIndex = dummySifts.findIndex((p) => p.id === +siftId);
 
