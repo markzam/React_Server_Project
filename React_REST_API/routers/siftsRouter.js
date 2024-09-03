@@ -1,5 +1,7 @@
 import express from 'express';
 import dummySifts from "../dummySift/dummySifts.js"
+import DUMMY_USERS from '../dummySift/dummyUsers.js';
+import { PRODUCT_NOT_FOUND_MESSAGE } from '../constants/errorMessages.js';
 
 const siftsRouter = express.Router();
 
@@ -29,7 +31,7 @@ siftsRouter.put("/:siftId", (req, res) => {
     const siftToUpdate = dummySifts.find((p) => p.id === +siftId);
     
 
-    if(!siftToUpdate) res.status(404).send("Product/Sift not found")
+    if(!siftToUpdate) res.status(404).send(PRODUCT_NOT_FOUND_MESSAGE);
     
     siftToUpdate.sift = req.body.sift;
     siftToUpdate.revision = siftToUpdate.revision + 1;
@@ -46,7 +48,7 @@ siftsRouter.delete("/:siftId", (req, res) => {
     const siftId = req.params.siftId;
     const siftToDeleteIndex = dummySifts.findIndex((p) => p.id === +siftId);
 
-    if (siftToDeleteIndex === -1) return res.status(404).send("Product/Sift not found");
+    if (siftToDeleteIndex === -1) return res.status(404).send(PRODUCT_NOT_FOUND_MESSAGE);
 
     const deletedSift = dummySifts.splice(siftToDeleteIndex, 1);
 
