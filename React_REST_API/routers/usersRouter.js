@@ -40,6 +40,11 @@ usersRouter.post("/", (req, res) => {
         return;
     }
 
+    if(newUser.password !== newUser.repeatPassword){
+        res.status(400).send("Passwords don't match.");
+        return;
+    }
+
     if(DUMMY_USERS.find((user) => user.email == newUser.email)) {
         res.status(400).send("An user with the provided email already exists.");
         return;
@@ -48,7 +53,7 @@ usersRouter.post("/", (req, res) => {
     
     DUMMY_USERS.push(newUser);
     
-    res.status(201).send(newUser);
+    res.status(201).send({...newUser, password: null, repeatPassword: null});
 });
 
 
