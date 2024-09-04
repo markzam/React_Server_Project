@@ -25,9 +25,10 @@ usersRouter.get("/:userId", (req, res) => {
 
     const user = DUMMY_USERS.find(user => user.id == userId);
 
-    if (!user) res.status(404).send(USER_NOT_FOUND_MESSAGE)
+    if (!user) return res.status(404).send(USER_NOT_FOUND_MESSAGE);
 
     res.send({id: userId, email: user.email});
+    
 });
 
 //This middleware creates a user

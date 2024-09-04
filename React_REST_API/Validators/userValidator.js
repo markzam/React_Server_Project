@@ -12,10 +12,9 @@ export default function userValidator(user) {
     if (!user.dateOfBirth?.trim()) ErrorMessages.push("Date of birth is required");
 
     const address = user.address;
-    if (!address) {
-        ErrorMessages.push("Address is required")
+    if (!address) ErrorMessages.push("Address is required");
         return ErrorMessages;
-    }
+
 
 
     if (!address.city?.trim()) ErrorMessages.push("City is required");
