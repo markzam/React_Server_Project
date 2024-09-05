@@ -7,7 +7,7 @@ const siftSchema = new mongoose.Schema({
     sift_r: {type: String, required: true},
     revision: {type: Number, required: true},
     date_r: {type: Date, required: true},
-    ownerId: {mongoose.Types.ObjectId, required: true, ref: "User" },
+    ownerId: {type: mongoose.Types.ObjectId, required: true, ref: "User" },
 });
 
 const Sift = mongoose.model("Product", siftSchema);
