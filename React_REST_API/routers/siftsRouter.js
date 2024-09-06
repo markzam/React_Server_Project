@@ -1,6 +1,4 @@
 import express from 'express';
-import dummySifts from "../dummySift/dummySifts.js"
-import DUMMY_USERS from '../dummySift/dummyUsers.js';
 import { PRODUCT_NOT_FOUND_MESSAGE } from '../constants/errorMessages.js';
 
 const siftsRouter = express.Router();

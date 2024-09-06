@@ -5,6 +5,7 @@ const userSchema = new mongoose.Schema({
     lastName: { type: String, required: true},
     email: { type: String, required: true},
     dateOfBirth: { type: Date, required: true},
+    password: {type: String, required: true},
     address: {type:{
         number: { type: String},
         street:{ type: String},
@@ -16,6 +17,6 @@ const userSchema = new mongoose.Schema({
     sifts: [{type: mongoose.Types.ObjectId, require: true, ref: "Sift"}],
 });
 
-const User = mongoose.Model("User", userSchema);
+const User = mongoose.model("User", userSchema);
 
 export default User;
