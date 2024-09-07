@@ -84,6 +84,7 @@ try {
 
 });
 
+//This middleware login a use
 usersRouter.post("/login", async (req, res) => {
     try {
         const user = await User.findOne({
