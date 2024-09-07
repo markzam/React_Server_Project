@@ -1,7 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from "cors";
-import siftsRouter from './routers/siftsRouter.js';
+import productsRouter from './routers/productsRouter.js';
 import usersRouter from './routers/usersRouter.js';
 import mongoose from 'mongoose';
 import 'dotenv/config'
@@ -15,7 +15,7 @@ app.use(cors({
 
 app.use(bodyParser.json());
 
-app.use("/sifts", siftsRouter);
+app.use("/products", productsRouter);
 
 app.use("/users", usersRouter);
 

@@ -14,7 +14,7 @@ const userSchema = new mongoose.Schema({
         zip: { type: String},
         country: { type: String, required: true}
     }, required:true,},
-    sifts: [{type: mongoose.Types.ObjectId, require: true, ref: "Sift"}],
+    products: [{type: mongoose.Types.ObjectId, require: true, ref: "Product"}],
 });
 
 const User = mongoose.model("User", userSchema);
